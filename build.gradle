@@ -63,11 +63,6 @@ tasks.withType(Test) {
         }
     }
 }
-task registration_form(type: Test) {
-    useJUnitPlatform {
-        includeTags("registration_form")
-    }
-}
 
 task demoqa(type: Test) {
     useJUnitPlatform {
@@ -75,10 +70,5 @@ task demoqa(type: Test) {
     }
 }
 
-task rest_api(type: Test) {
-    useJUnitPlatform {
-        includeTags("rest_api")
-    }
-}
 
 
