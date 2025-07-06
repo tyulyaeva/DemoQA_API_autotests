@@ -1,5 +1,4 @@
 package tests;
-
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attachments;
@@ -9,10 +8,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import java.util.Map;
 import java.util.UUID;
-
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
@@ -22,6 +19,7 @@ public class TestBase {
     public static String URL_login = "/Account/v1/Login";
     public static String URL_book = "/BookStore/v1/Books";
     public static String URL_books = "/BookStore/v1/Book";
+    public static String UPDATE_token = "/Account/v1/GenerateToken";
 
     @BeforeAll
     public static void setupGlobalTestConfiguration() {
