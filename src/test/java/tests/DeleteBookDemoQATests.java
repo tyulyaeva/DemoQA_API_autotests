@@ -7,6 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.ProfilePage;
+
 import java.util.List;
 import static requests.BookApiRequests.*;
 import static com.codeborne.selenide.logevents.SelenideLogger.step;

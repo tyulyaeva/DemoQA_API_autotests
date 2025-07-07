@@ -15,17 +15,20 @@ public class LoginExtension implements BeforeEachCallback {
 
     @Override
     public void beforeEach(ExtensionContext extensionContext) {
+        if (extensionContext.getTestMethod().isPresent() &&
+                extensionContext.getTestMethod().get().isAnnotationPresent(WithLogin.class)) {
+            LoginResponseModel auth =
+                    step("Авторизация пользователя @WithLogin", () -> AuthorizationApiRequests.loginRequest());
 
-        LoginResponseModel auth =
-                step("Авторизация пользователя @WithLogin", () -> AuthorizationApiRequests.loginRequest());
+            userId = auth.getUserId();
+            token = auth.getToken();
+            expires = auth.getExpires();
 
-        userId = auth.getUserId();
-        token = auth.getToken();
-        expires = auth.getExpires();
-
-        open("/favicon.ico");
-        getWebDriver().manage().addCookie(new Cookie("userID", userId));
-        getWebDriver().manage().addCookie(new Cookie("expires", expires));
-        getWebDriver().manage().addCookie(new Cookie("token", token));
+            step("Авторизация пользователя", () ->
+                    open("/favicon.ico"));
+            getWebDriver().manage().addCookie(new Cookie("userID", userId));
+            getWebDriver().manage().addCookie(new Cookie("expires", expires));
+            getWebDriver().manage().addCookie(new Cookie("token", token));
+        }
     }
 }
