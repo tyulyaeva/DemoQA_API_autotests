@@ -15,8 +15,7 @@ public class LoginExtension implements BeforeEachCallback {
 
     @Override
     public void beforeEach(ExtensionContext extensionContext) {
-        if (extensionContext.getTestMethod().isPresent() &&
-                extensionContext.getTestMethod().get().isAnnotationPresent(WithLogin.class)) {
+        if (extensionContext.getTestMethod().get().isAnnotationPresent(WithLogin.class)) {
             LoginResponseModel auth =
                     step("Авторизация пользователя @WithLogin", () -> AuthorizationApiRequests.loginRequest());
 
