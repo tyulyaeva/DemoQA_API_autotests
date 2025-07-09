@@ -32,7 +32,7 @@ public class TestBase {
 
     @AfterEach
     void shutDown() {
-        Attachments.screenshotAs("Скриншот результата");
+        Attachments.screenshotAs("Last screenshot");
         Attachments.pageSource();
         if (!Configuration.browser.equals("firefox"))
             Attachments.browserConsoleLogs();
