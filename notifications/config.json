@@ -1,0 +1,20 @@
+{
+  "base": {
+    "project": "DemoQA_API_autotests",
+    "environment": "test.qa.guru",
+    "comment": "DemoQA_API_autotests",
+    "reportLink": "",
+    "language": "ru",
+    "allureFolder": "",
+    "enableChart": true,
+    "enableSuitesPublishing": false,
+    "customData": {}
+  },
+  "telegram": {
+    "token": "7796999048:AAGmqMErI_0JmqoHhAXt9-2ygsSClwScMio",
+    "chat": "-1002665585131",
+    "topic": "",
+    "replyTo": "",
+    "templatePath": "/templates/telegram.ftl"
+  }
+}
