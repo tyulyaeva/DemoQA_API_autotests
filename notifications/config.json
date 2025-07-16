@@ -16,5 +16,6 @@
     "topic": "",
     "replyTo": "",
     "templatePath": "/templates/telegram.ftl"
-  }
+  },
+
 }
